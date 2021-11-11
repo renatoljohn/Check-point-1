@@ -1,88 +1,49 @@
+/*
+Equipe 6
+
+Renato Lino Barros
+Mariana Orsi
+Erika Franco
+Francisco Oliveira
+Maria Giordane
+Everton Paz Da Silva
+
+*/
+
 function microondas(comida, tempo){
-    if(comida == "Pipoca"){
-        if(tempo >= 10 && tempo < 20){
-            return "Prato pronto, bom apetite!!!"
-        }
-        else if(tempo < 10){
-            return "tempo insuficiente"
-        }
-        else if(tempo >= 20 && tempo < 30){
-            return "sua comida queimou"
-        }
-        else{
-            return "kabumm!!!"
-        }
-
+    let tempoEsp = 0;
+    let comidalow = comida.toLowerCase();
+    
+    switch(comidalow){
+        case "pipoca":
+            tempoEsp = 10;
+            break
+        case "macarrão":
+            tempoEsp = 8;
+            break
+        case "carne":
+            tempoEsp = 15;
+            break
+        case "feijão":
+            tempoEsp = 12;
+            break
+        case "brigadeiro":
+            tempoEsp = 8;
+            break
+        default:
+            return "Prato inexistente"
     }
-
-    else if(comida == "Macarrão"){
-        if(tempo >= 8 && tempo < 16){
-            return "Prato pronto, bom apetite!!!"
-        }
-        else if(tempo < 8){
-            return "tempo insuficiente"
-        }
-        else if(tempo >= 16 && tempo < 24){
-            return "sua comida queimou"
-        }
-        else{
-            return "kabumm!!!"
-        }
+    if(tempo >= tempoEsp * 3){
+        return "kabumm!!!\nPrato pronto, bom apetite!!!"
     }
-
-    else if(comida == "Carne"){
-        if(tempo >= 15 && tempo < 30){
-            return "Prato pronto, bom apetite!!!"
-        }
-        else if(tempo < 15){
-            return "tempo insuficiente"
-        }
-        else if(tempo >= 30 && tempo < 45){
-            return "sua comida queimou"
-        }
-        else{
-            return "kabumm!!!"
-        }
-
+    else if(tempo >= tempoEsp * 2){
+        return "sua comida queimou\nPrato pronto, bom apetite!!!"
     }
-
-    else if(comida == "Feijão"){
-        if(tempo >= 12 && tempo < 24){
-            return "Prato pronto, bom apetite!!!"
-        }
-        else if(tempo < 12){
-            return "tempo insuficiente"
-        }
-        else if(tempo >= 24 && tempo < 36){
-            return "sua comida queimou"
-        }
-        else{
-            return "kabumm!!!"
-        }
-
-    }
-    else if(comida == "Brigadeiro"){
-        if(tempo >= 8 && tempo < 16){
-            return "Prato pronto, bom apetite!!!"
-        }
-        else if(tempo < 8){
-            return "tempo insuficiente"
-        }
-        else if(tempo >= 16 && tempo < 24){
-            return "sua comida queimou"
-        }
-        else{
-            return "kabumm!!!"
-        }
-
+    else if(tempo < tempoEsp){
+        return "tempo insuficiente\nPrato pronto, bom apetite!!!"
     }
     else{
-        return "Prato inexistente"
-
+        return "Prato pronto, bom apetite!!!"
     }
-
 }
-
-
-
-console.log(microondas("Carne", 45))
+console.log(microondas("Pipoca", 10))
